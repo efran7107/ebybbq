@@ -1,3 +1,53 @@
+:root {
+  --menu-link-hero-cont: white;
+  --text-color: rgba(24, 24, 24, 0.568);
+}
+
 #root {
   font-family: "Expletus Sans", serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p,
+a {
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.hero-section h1,
+.hero-section p {
+  color: var(--menu-link-hero-cont);
+}
+
+.hero-section h1 {
+  font-size: 60px;
+}
+
+.hero-section p {
+  font-size: 28px;
+}
+
+.navbar a {
+  color: var(--menu-link-hero-cont);
 }

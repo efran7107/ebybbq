@@ -1,0 +1,43 @@
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  gap: 60%;
+}
+
+.left-nav,
+.right-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar img {
+  position: absolute;
+  width: 154px;
+  top: 10px;
+  left: 50%;
+  right: 50%;
+  border-radius: 20px;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.hero-section {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-section img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
