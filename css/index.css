@@ -2,17 +2,26 @@
   --menu-link-hero-cont: white;
   --text-color: rgba(24, 24, 24, 0.7);
   --section-titles: rgb(153, 148, 132);
+  --btn-color: rgb(214, 209, 191);
+
+  --default-font: "Expletus Sans", serif;
 
   --default-animation: 0.3s ease-in-out;
 }
 
 #root {
-  font-family: "Expletus Sans", serif;
+  font-family: var(--default-font);
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+}
+
+input[type="button"] {
+  margin: 0;
+  padding: 0;
+  font-family: var(--default-font);
 }
 
 h1,
@@ -40,6 +49,15 @@ a {
 
 li {
   list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.body {
+  background-color: var(--menu-link-hero-cont);
 }
 
 .hero-section h1,
