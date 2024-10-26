@@ -1,10 +1,27 @@
 .navbar {
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 50px;
   gap: 60%;
+}
+
+.navbar.scroll {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar.scroll img {
+  width: 77px;
+  top: 5px;
+}
+
+.navbar.scroll,
+.navbar.scroll img,
+.navbar,
+.navbar img {
+  transition: var(--default-animation);
 }
 
 .left-nav,
@@ -40,4 +57,8 @@
   top: 0;
   width: 100%;
   z-index: -1;
+}
+
+.about-us {
+  background-color: white;
 }

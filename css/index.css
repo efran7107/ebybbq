@@ -1,6 +1,9 @@
 :root {
   --menu-link-hero-cont: white;
-  --text-color: rgba(24, 24, 24, 0.568);
+  --text-color: rgba(24, 24, 24, 0.7);
+  --section-titles: rgb(153, 148, 132);
+
+  --default-animation: 0.3s ease-in-out;
 }
 
 #root {
@@ -20,6 +23,10 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+h2 {
+  color: var(--section-titles);
 }
 
 p,
