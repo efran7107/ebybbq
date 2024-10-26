@@ -1,10 +1,27 @@
 .navbar {
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 50px;
   gap: 60%;
+}
+
+.navbar.scroll {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar.scroll img {
+  width: 77px;
+  top: 5px;
+}
+
+.navbar.scroll,
+.navbar.scroll img,
+.navbar,
+.navbar img {
+  transition: var(--default-animation);
 }
 
 .left-nav,
@@ -37,7 +54,59 @@
 
 .hero-section img {
   position: absolute;
-  top: 0;
   width: 100%;
   z-index: -1;
+}
+
+.about-us {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 100px 0;
+}
+
+.about-us h2 {
+  font-size: 36px;
+}
+
+.about-us hr {
+  width: 200px;
+  border: 1px solid var(--section-titles);
+}
+
+.about-us-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.catering {
+  text-align: center;
+}
+
+.find-out {
+  display: flex;
+  justify-content: center;
+}
+
+.near-you {
+  width: 50%;
+  text-align: center;
+}
+
+.find-out-more {
+  width: 50%;
+  align-self: center;
+  text-align: center;
+}
+
+.find-out-more a {
+  background: var(--btn-color);
+  border: none;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 10px;
 }

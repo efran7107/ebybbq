@@ -4,5 +4,8 @@
   },
   "devDependencies": {
     "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "refresh": "npx tsc functions.ts"
   }
 }
