@@ -3,6 +3,8 @@
   --text-color: rgba(24, 24, 24, 0.7);
   --section-titles: rgb(153, 148, 132);
   --btn-color: rgb(214, 209, 191);
+  --alt-section-background: rgb(246, 246, 246);
+  --section-background: white;
 
   --default-font: "Expletus Sans", serif;
 
@@ -43,6 +45,10 @@ a {
   color: var(--text-color);
 }
 
+p {
+  line-height: 30px;
+}
+
 a {
   text-decoration: none;
 }
@@ -57,7 +63,10 @@ li {
 }
 
 .body {
-  background-color: var(--menu-link-hero-cont);
+  background-color: var(--section-background);
+}
+.body.alt-bkg {
+  background-color: var(--alt-section-background);
 }
 
 .hero-section h1,
