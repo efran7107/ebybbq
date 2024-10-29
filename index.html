@@ -67,11 +67,15 @@
       </section>
     </div>
     <div class="body alt-bkg">
-      <section class="contact-us">
+      <section class="contact-us container">
         <h2>Contact Us</h2>
         <hr />
         <div class="catering-request-form">
           <form class="request-form" action="">
+            <h5>
+              Catering Requests - This is not a order form. Someone will get
+              with you in 48 hour to work with you to put an order together.
+            </h5>
             <input
               type="text"
               id="name"
@@ -98,6 +102,7 @@
               name="date"
               id="date"
               placeholder="Date and Time of Event*"
+              required
             />
             <input
               type="text"
@@ -111,7 +116,13 @@
               id="address"
               placeholder="Event Address*"
             />
-            <input type="number" name="guests" id="guests" />
+            <input
+              type="number"
+              name="guests"
+              id="guests"
+              placeholder="Number of Guests"
+              min="1"
+            />
             <textarea
               name="interests"
               id="interests"
@@ -122,11 +133,18 @@
               id="notes"
               placeholder="Other Notes"
             ></textarea>
-            <input type="file" name="atatchment" id="attatchment" />
-            <input type="submit" value="submit" />
+            <input type="submit" value="Send" class="send" />
           </form>
+          <div class="visit-us">
+            <h5>Visit Us</h5>
+            <p>
+              Follow us on social media and keep checking our events to see when
+              we're in your area.
+            </p>
+            <p>We can't wait to see you!</p>
+            <h5>Ernie's Backyard BBQ</h5>
+          </div>
         </div>
-        <div class="visit-us"></div>
       </section>
     </div>
     <script src="./functions.js"></script>

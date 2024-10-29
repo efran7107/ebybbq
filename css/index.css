@@ -20,12 +20,6 @@ body {
   margin: 0;
 }
 
-input[type="button"] {
-  margin: 0;
-  padding: 0;
-  font-family: var(--default-font);
-}
-
 h1,
 h2,
 h3,
@@ -62,6 +56,10 @@ li {
   margin: 0 auto;
 }
 
+.container h5 {
+  font-size: 24px;
+}
+
 .body {
   background-color: var(--section-background);
 }
@@ -84,4 +82,25 @@ li {
 
 .navbar a {
   color: var(--menu-link-hero-cont);
+}
+
+.request-form textarea {
+  resize: none;
+  height: 100px;
+}
+
+input,
+textarea {
+  height: 30px;
+  padding: 3px 15px 0;
+  font-family: var(--default-font);
+  font-size: 18px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: var(--default-font);
+  color: var(--text-color);
+  font-size: 18px;
+  padding: 0;
 }
