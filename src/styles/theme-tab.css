@@ -1,0 +1,47 @@
+.theme-tab-cont {
+  position: fixed;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  background-color: var(--secondary-bg-color);
+  color: var(--alt-text-color);
+  padding: 5px 10px;
+  border-radius: 20px 0 0 20px;
+  right: -148px;
+  top: 45vh;
+  transition: all 0.3s ease-in-out;
+}
+
+.theme-tab-cont.active {
+  right: 0px;
+}
+
+.tab-btn-cont i {
+  cursor: pointer;
+  padding: 100% 0;
+}
+
+.theme-change-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-btn-cont,
+.theme-btn {
+  display: flex;
+}
+
+.theme-btn-cont {
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-btn {
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}

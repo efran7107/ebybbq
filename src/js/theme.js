@@ -1,5 +1,9 @@
 const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const root = document.documentElement;
+const themeTabCont = document.getElementById("themeTabCont");
+const themeTab = document.getElementById("themeTab");
+const left = "fa-circle-chevron-left";
+const right = "fa-circle-chevron-right";
 
 const theme = localStorage.getItem("theme");
 if (!theme) {
@@ -29,3 +33,16 @@ if (!theme) {
     root.classList.add("light");
   }
 }
+
+themeTab.addEventListener("click", (e) => {
+  const direction = e.target.classList[1].split("-")[3];
+  if (direction === "left") {
+    e.target.classList.remove(left);
+    e.target.classList.add(right);
+    themeTabCont.classList.add("active");
+    return;
+  }
+  e.target.classList.remove(right);
+  e.target.classList.add(left);
+  themeTabCont.classList.remove("active");
+});
