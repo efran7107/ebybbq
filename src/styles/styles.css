@@ -63,3 +63,55 @@
 .hero h3 {
   width: 35%;
 }
+
+.about-us {
+  background-color: var(--main-bg-color);
+}
+
+.about-us .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 100px 0;
+}
+
+.about-us hr {
+  width: 200px;
+}
+
+.about-us-content {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.catering-smoked-bbq {
+  text-align: center;
+}
+
+.find-out-spot {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.spot-near-you {
+  text-align: center;
+}
+
+.find-out-more {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.find-out-more-btn {
+  padding: 20px;
+  background: var(--main-link-color);
+  color: var(--main-bg-color);
+  border-radius: 15px;
+}
