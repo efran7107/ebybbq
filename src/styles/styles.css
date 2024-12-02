@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 75px;
+    position: relative;
+    background-color: var(--secondary-bg-color-opacity);
+    color: var(--alt-text-color);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar a {
+    color: var(--alt-text-color)
+}
+
+.navbar img {
+    position: absolute;
+    width: 200px;
+    left: 45vw;
+    border-radius: 20px;
+}
+
+#bgImg {
+    position: fixed;
+    z-index: -1;
+    width: 100vw;
+    top: -200px;
+}
