@@ -26,6 +26,18 @@
   margin: 0 auto;
 }
 
+.container h2 {
+  font-size: 38px;
+}
+
+.container h4 {
+  font-size: 22px;
+}
+
+.container p {
+  font-size: 1rem;
+}
+
 body {
   position: relative;
   box-sizing: border-box;

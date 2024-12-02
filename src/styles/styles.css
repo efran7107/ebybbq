@@ -5,13 +5,12 @@
   justify-content: space-between;
   padding: 10px;
   height: 75px;
-  background-color: var(--secondary-bg-color-opacity);
-  color: var(--alt-text-color);
   margin-bottom: 250px;
   transition: all 0.3s ease-in-out;
 }
 
 .navbar.sticky {
+  background-color: var(--secondary-bg-color-opacity);
   height: 50px;
 }
 
@@ -27,6 +26,10 @@
 }
 
 .navbar a {
+  color: #1b1b1b;
+}
+
+.navbar.sticky a {
   color: var(--alt-text-color);
 }
 
@@ -112,6 +115,8 @@
 .find-out-more-btn {
   padding: 20px;
   background: var(--main-link-color);
-  color: var(--main-bg-color);
+  color: var(--secondary-bg-color);
   border-radius: 15px;
+  font-size: 14px;
+  font-weight: 700;
 }
