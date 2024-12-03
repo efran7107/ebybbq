@@ -62,7 +62,7 @@
       <h3>Great smoked meats personalized with your favorite EBYBBQ sauce</h3>
     </section>
     <section class="about-us">
-      <div class="container">
+      <div class="container section-cont">
         <h2>About Us</h2>
         <hr />
         <div class="about-us-content">
@@ -91,7 +91,130 @@
         </div>
       </div>
     </section>
+    <section class="contact-us">
+      <div class="container section-cont">
+        <h2>Contact Us</h2>
+        <hr />
+        <div class="contact-visit">
+          <div class="contact-form-cont">
+            <h4>
+              Catering Requests - This is not a order form. Someone will get
+              with you in 48 hour to work with you to put an order together.
+            </h4>
+            <form class="contact-form" id="contactForm" autocomplete="off">
+              <div class="input-cont">
+                <label for="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Name*"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="input-cont">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email*"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="input-cont">
+                <p>Phone Number:</p>
+                <div class="phone-cont">
+                  (<input
+                    type="text"
+                    pattern="\d*"
+                    name="phone"
+                    id="phoneArea"
+                    placeholder="XXX"
+                    maxlength="3"
+                    autocomplete="off"
+                  />)
+                  <input
+                    type="text"
+                    pattern="\d*"
+                    name="phone"
+                    id="phoneLocal"
+                    placeholder="XXX"
+                    maxlength="3"
+                    autocomplete="off"
+                  />
+                  -
+                  <input
+                    type="text"
+                    pattern="\d*"
+                    name="phone"
+                    id="phonePers"
+                    placeholder="XXXX"
+                    maxlength="4"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="input-cont">
+                <label for="date">Date and Time:</label>
+                <input
+                  type="datetime-local"
+                  name="date-time"
+                  id="date"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="input-cont">
+                <label for="eventType">Type of Event:</label>
+                <input
+                  type="text"
+                  name="event-type"
+                  id="eventType"
+                  placeholder="Wedding, Anniversary, Birthday, etc"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="input-cont">
+                <label for="eventAddress">Event Address:</label>
+                <input
+                  type="text"
+                  name="event-address"
+                  id="eventAddress"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="input-cont">
+                <label for="numPeople">Number of People:</label>
+                <input
+                  type="number"
+                  name="num-people"
+                  id="numPeople"
+                  autocomplete="off"
+                />
+              </div>
+              <textarea
+                name="message"
+                id="message"
+                placeholder="I'm interested in..."
+                cols="30"
+                rows="5"
+              ></textarea>
+              <input type="submit" value="Send" />
+            </form>
+          </div>
+          <div class="visit-us">
+            <h4>Visit Us!</h4>
+            <p>
+              Follow us on social media and keep checking our events to see when
+              we're in your area.
+            </p>
+            <p>We can't wait to see you!</p>
+            <h4>Ernie's Backyard BBQ</h4>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="./src/js/index.js"></script>
     <script src="./src/js/theme.js"></script>
+    <script src="./src/js/form.js"></script>
   </body>
 </html>

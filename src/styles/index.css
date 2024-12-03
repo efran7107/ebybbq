@@ -24,6 +24,7 @@
 .container {
   max-width: 1920px;
   margin: 0 auto;
+  padding: 100px 0;
 }
 
 .container h2 {
@@ -69,4 +70,13 @@ li {
 
 a {
   text-decoration: none;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea,
+input {
+  font-family: "Expletus Sans", serif;
 }
