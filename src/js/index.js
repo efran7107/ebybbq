@@ -1,4 +1,5 @@
 const navbar = document.querySelector(".navbar");
+const contactUsSection = document.getElementById("contactUsSection");
 
 window.onscroll = () => {
   const yOffset = window.scrollY;
@@ -7,4 +8,12 @@ window.onscroll = () => {
   } else {
     navbar.classList.remove("sticky");
   }
+
+  if(contactUsSection.getBoundingClientRect().top < window.innerHeight -10 ){
+    contactUsSection.classList.add("animate");
+  }
+  
 };
+
+
+
