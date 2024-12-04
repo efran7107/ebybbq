@@ -55,7 +55,7 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    color: #ececec;
+    color: #ececec; 
   animation: slideIn 1s ease-in-out;
 }
 
