@@ -63,7 +63,8 @@
   width: 35%;
 }
 
-.about-us {
+.about-us,
+.ebybbq-in-action {
   background-color: var(--main-bg-color);
 }
 
