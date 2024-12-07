@@ -75,6 +75,18 @@ startingImgs.forEach((img) => {
   photoReelCont.appendChild(newImg);
 })
 
+const photos = document.querySelectorAll(".photo");
+
+photos.forEach((photo) => {
+  photo.addEventListener("click", () => {
+    photos.forEach((photo) => {
+      photo.classList.remove("active");
+    });
+    photo.classList.add("active");
+    imgCont.setAttribute("src", photo.getAttribute("src"));
+  });
+});
+
 window.onscroll = () => {
   const yOffset = window.scrollY;
   if (yOffset > 0) {

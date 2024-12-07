@@ -8,6 +8,7 @@
   --alt-text-color: #d1d1d1;
   --main-link-color: #d9d4c4;
   --main-headers-color: #999484;
+  --photo-reel-bg: #1b1b1b15;
 }
 
 .dark {
@@ -19,6 +20,7 @@
   --alt-text-color: #575757;
   --main-link-color: #999484;
   --main-headers-color: #d9d4c4;
+  --photo-reel-bg: #ececec15;
 }
 
 .container {
