@@ -61,6 +61,8 @@ const navbar = document.querySelector(".navbar");
 const contactUsSection = document.getElementById("contactUsSection");
 const imgCont = document.getElementById("imgCont");
 const photoReelCont = document.getElementById("photoReelCont");
+const lefts = document.querySelectorAll('#left');
+const rights = document.querySelectorAll('#right');
 const startingImgs = imgs.slice(0, 5)
 const startingImg = startingImgs[0];
 
@@ -76,6 +78,9 @@ startingImgs.forEach((img) => {
 })
 
 const photos = document.querySelectorAll(".photo");
+
+
+
 
 photos.forEach((photo) => {
   photo.addEventListener("click", () => {
