@@ -46,7 +46,7 @@
   position: fixed;
   z-index: -1;
   width: 100vw;
-  top: -200px;
+  top: 0px;
 }
 
 .hero-section {
@@ -57,10 +57,11 @@
     gap: 20px;
     color: #ececec; 
   animation: slideIn 1s ease-in-out;
+  text-align: center;
 }
 
 .hero h3 {
-  width: 35%;
+  width: 50%;
 }
 
 .about-us,
@@ -81,6 +82,7 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  transition: all 0.3s ease-in-out;
 }
 
 .section-cont hr {

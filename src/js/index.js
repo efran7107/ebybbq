@@ -79,7 +79,16 @@ startingImgs.forEach((img) => {
 
 const photos = document.querySelectorAll(".photo");
 
-
+rights.forEach(right => {
+    right.addEventListener("click", (e) => {
+        const curImgIndex = imgs.indexOf(startingImg);
+        if(curImgIndex < photos.length - 1){
+            imgCont.setAttribute('src', imgs[curImgIndex + 1]);
+            photos[curImgIndex].classList.remove("active");
+            photos[curImgIndex + 1].classList.add("active");
+        }
+    })
+})
 
 
 photos.forEach((photo) => {
