@@ -57,12 +57,11 @@ const imgs = [
 ];
 
 
-const navbar = document.querySelector(".navbar");
+const navbar = document.getElementById('nav')
 const contactUsSection = document.getElementById("contactUsSection");
 const imgCont = document.getElementById("imgCont");
+const mainImgDir = [document.getElementById('mainLeft'), document.getElementById('mainRight')];
 const photoReelCont = document.getElementById("photoReelCont");
-const lefts = document.querySelectorAll('#left');
-const rights = document.querySelectorAll('#right');
 const startingImgs = imgs.slice(0, 5)
 const startingImg = startingImgs[0];
 
@@ -79,17 +78,24 @@ startingImgs.forEach((img) => {
 
 const photos = document.querySelectorAll(".photo");
 
-rights.forEach(right => {
-    right.addEventListener("click", (e) => {
-        const curImgIndex = imgs.indexOf(startingImg);
-        if(curImgIndex < photos.length - 1){
-            imgCont.setAttribute('src', imgs[curImgIndex + 1]);
-            photos[curImgIndex].classList.remove("active");
-            photos[curImgIndex + 1].classList.add("active");
-        }
-    })
-})
-
+const changePhoto = (direction, imgIndex) => {
+    switch (direction) {
+        case 'right':
+            if(imgIndex < photos.length - 1){
+                imgCont.setAttribute('src', imgs[imgIndex + 1]);
+                photos[imgIndex].classList.remove("active");
+                photos[imgIndex + 1].classList.add("active");
+            }
+        break;
+        case 'left':
+            if(imgIndex > 0){
+                imgCont.setAttribute('src', imgs[imgIndex - 1]);
+                photos[imgIndex].classList.remove("active");
+                photos[imgIndex - 1].classList.add("active");
+            }
+        break;
+    }
+}
 
 photos.forEach((photo) => {
   photo.addEventListener("click", () => {

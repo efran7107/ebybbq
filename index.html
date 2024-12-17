@@ -46,7 +46,7 @@
       src="./src/assets/img/background-img.jpg"
       alt="bbq backdrop"
     />
-    <div class="navbar">
+    <div id="nav" class="navbar">
       <nav>
         <li><a href="#">Home</a></li>
         <li><a href="#">Catering Menu</a></li>
@@ -222,26 +222,26 @@
         <hr />
         <div class="main-photo-cont">
           <div class="move-photo-left photo-trigger">
-            <i id="left" class="fa-solid fa-caret-left"></i>
+            <i id="mainLeft" class="fa-solid fa-caret-left"></i>
           </div>
           <img alt="main bbq photo" id="imgCont">
           <div class="move-photo-right photo-trigger">
-            <i id="right" class="fa-solid fa-caret-right"></i>
-          </div>
-        </div>
-        <div class="photo-reel-cont">
-          <div class="move-photo-left photo-trigger">
-            <i id="left" class="fa-solid fa-caret-left"></i>
-          </div>
-          <div class="photo-reel" id="photoReelCont"></div>
-          <div class="move-photo-right photo-trigger">
-            <i id="right" class="fa-solid fa-caret-right"></i>
+            <i id="mainRight" class="fa-solid fa-caret-right"></i>
           </div>
         </div>
       </div>
+        <div class="photo-reel-cont">
+          <div class="move-photo-left photo-trigger">
+            <i id="reelLeft" class="fa-solid fa-caret-left"></i>
+          </div>
+          <div class="photo-reel" id="photoReelCont"></div>
+          <div class="move-photo-right photo-trigger">
+            <i id="reelRight" class="fa-solid fa-caret-right"></i>
+          </div>
+        </div>
     </section>
-    <script src="./src/js/index.js"></script>
     <script src="./src/js/theme.js"></script>
     <script src="./src/js/form.js"></script>
+    <script src="./src/js/index.js"></script>
   </body>
 </html>

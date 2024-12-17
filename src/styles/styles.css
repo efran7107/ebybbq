@@ -210,24 +210,27 @@
 
 #imgCont {
   max-width: 500px;
+  max-height: 300px;
   border-radius: 20px;
-  box-shadow: 0px 0px 50px 10px var(--alt-text-color);
+  box-shadow: 0 0 50px 10px var(--alt-text-color);
 }
 
 .photo-reel-cont {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   background-color: var(--photo-reel-bg);
   padding: 30px 20px;
-  box-shadow: 0px 0px 10px 10px var(--photo-reel-bg);
+  box-shadow: 0 0 10px 10px var(--photo-reel-bg);
 }
 
 .photo-reel {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 15px;
+  max-width: 75%;
 }
 
 .photo-reel .photo {
@@ -238,7 +241,7 @@
 }
 
 .photo-reel .photo.active {
-  box-shadow: 0px 0px 65px -20px var(--secondary-bg-color-opacity);
+  box-shadow: 0 0 65px -20px var(--secondary-bg-color-opacity);
   transition: all 0.3s ease-in-out;
   border: 1px solid gold;
 }
