@@ -10,7 +10,6 @@ const img9 = "./src/assets/img/img9.jpg";
 const img10 = "./src/assets/img/img10.jpg";
 const img11 = "./src/assets/img/img11.jpg";
 const img12 = "./src/assets/img/img12.jpg";
-const img13 = "./src/assets/img/img13.jpg";
 const img14 = "./src/assets/img/img14.jpg";
 const img15 = "./src/assets/img/img15.jpg";
 const img16 = "./src/assets/img/img16.jpg";
@@ -39,7 +38,6 @@ const imgs = [
     img10,
     img11,
     img12,
-    img13,
     img14,
     img15,
     img16,
@@ -78,14 +76,41 @@ startingImgs.forEach((img) => {
 
 const photos = document.querySelectorAll(".photo");
 
-const changePhoto = (direction, imgIndex) => {
+const shiftPhotos = (dirEl) => {
+    const direction = dirEl.target.getAttribute('id').slice(4).toLowerCase();
+    const imgIndexArr = []
+    photos.forEach(photo =>
+        photo.getAttribute('src') !== '' ?
+            imgIndexArr.push(imgs.indexOf(photo.getAttribute('src'))) :
+            imgIndexArr.push(-1)
+    )
+    if(direction === 'right') {
+        if(imgIndexArr.filter(index => index < imgs.length).length === 5){
+            const newIndexArr = imgIndexArr
+                .map(i => i + 5)
+            newIndexArr.forEach(i =>
+                i < imgs.length ?
+                    photos[newIndexArr.indexOf(i)].setAttribute('src', imgs[i]) :
+                    photos[newIndexArr.indexOf(i)].setAttribute('src', '')
+            )
+        }
+    }
+
+}
+
+const changePhoto = (dirEl) => {
+    const direction = dirEl.target.getAttribute('id').slice(4).toLowerCase()
+    const imgIndex = imgs.indexOf(imgCont.getAttribute('src'))
     switch (direction) {
         case 'right':
-            if(imgIndex < photos.length - 1){
-                imgCont.setAttribute('src', imgs[imgIndex + 1]);
-                photos[imgIndex].classList.remove("active");
-                photos[imgIndex + 1].classList.add("active");
+            imgCont.setAttribute('src', imgs[imgIndex + 1]);
+            photos[imgIndex % 5].classList.remove("active");
+            if(imgIndex % 5 < photos.length - 1){
+                photos[(imgIndex + 1) % 5].classList.add("active");
+                break;
             }
+            shiftPhotos(dirEl);
+            photos[0].classList.add("active");
         break;
         case 'left':
             if(imgIndex > 0){
@@ -96,6 +121,12 @@ const changePhoto = (direction, imgIndex) => {
         break;
     }
 }
+
+const clickEvent = (dirEl) => {
+    dirEl.addEventListener("click", changePhoto)
+}
+
+mainImgDir.forEach(clickEvent)
 
 photos.forEach((photo) => {
   photo.addEventListener("click", () => {
