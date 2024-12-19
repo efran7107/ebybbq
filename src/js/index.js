@@ -76,6 +76,16 @@ startingImgs.forEach((img) => {
 
 const photos = document.querySelectorAll(".photo");
 
+const resetPhotos = () => {
+    imgCont.setAttribute("src", startingImg);
+    startingImgs.forEach((img) => {
+      const photoCont = photos[startingImgs.indexOf(img)];
+      photoCont.setAttribute("src", img);
+      photoCont.classList.remove("active");
+    } )
+    photos[0].classList.add("active");
+}
+
 const shiftPhotos = (dirEl) => {
     const direction = dirEl.target.getAttribute('id').slice(4).toLowerCase();
     const imgIndexArr = []
@@ -85,7 +95,7 @@ const shiftPhotos = (dirEl) => {
             imgIndexArr.push(-1)
     )
     if(direction === 'right') {
-        if(imgIndexArr.filter(index => index < imgs.length).length === 5){
+        if(imgIndexArr.filter(index => index === -1).length < 1){
             const newIndexArr = imgIndexArr
                 .map(i => i + 5)
             newIndexArr.forEach(i =>
@@ -93,7 +103,9 @@ const shiftPhotos = (dirEl) => {
                     photos[newIndexArr.indexOf(i)].setAttribute('src', imgs[i]) :
                     photos[newIndexArr.indexOf(i)].setAttribute('src', '')
             )
+            return
         }
+        resetPhotos()
     }
 
 }
@@ -103,6 +115,10 @@ const changePhoto = (dirEl) => {
     const imgIndex = imgs.indexOf(imgCont.getAttribute('src'))
     switch (direction) {
         case 'right':
+            if(imgIndex === imgs.length - 1){
+              resetPhotos()
+              break;
+            }
             imgCont.setAttribute('src', imgs[imgIndex + 1]);
             photos[imgIndex % 5].classList.remove("active");
             if(imgIndex % 5 < photos.length - 1){
