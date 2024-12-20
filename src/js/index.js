@@ -26,123 +26,162 @@ const img26 = "./src/assets/img/img26.jpg";
 const img27 = "./src/assets/img/img27.jpg";
 
 const imgs = [
-    img1,
-    img2,
-    img3,
-    img4,
-    img5,
-    img6,
-    img7,
-    img8,
-    img9,
-    img10,
-    img11,
-    img12,
-    img14,
-    img15,
-    img16,
-    img17,
-    img18,
-    img19,
-    img20,
-    img21,
-    img22,
-    img23,
-    img24,
-    img25,
-    img26,
-    img27
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img14,
+  img15,
+  img16,
+  img17,
+  img18,
+  img19,
+  img20,
+  img21,
+  img22,
+  img23,
+  img24,
+  img25,
+  img26,
+  img27,
 ];
 
-
-const navbar = document.getElementById('nav')
+const navbar = document.getElementById("nav");
 const contactUsSection = document.getElementById("contactUsSection");
 const imgCont = document.getElementById("imgCont");
-const mainImgDir = [document.getElementById('mainLeft'), document.getElementById('mainRight')];
+const mainImgDir = [
+  document.getElementById("mainLeft"),
+  document.getElementById("mainRight"),
+];
 const photoReelCont = document.getElementById("photoReelCont");
-const startingImgs = imgs.slice(0, 5)
+const startingImgs = imgs.slice(0, 5);
 const startingImg = startingImgs[0];
+const lastImgs =
+  imgs.length % 5 > 0 ? imgs.slice(-(imgs.length % 5)) : imgs.slice(-5);
+const lastImg = imgs[imgs.length - 1];
 
 imgCont.setAttribute("src", startingImg);
 startingImgs.forEach((img) => {
   const newImg = document.createElement("img");
   newImg.setAttribute("src", img);
   newImg.classList.add("photo");
-  if(img === startingImg){
+  if (img === startingImg) {
     newImg.classList.add("active");
   }
   photoReelCont.appendChild(newImg);
-})
+});
 
 const photos = document.querySelectorAll(".photo");
 
-const resetPhotos = () => {
-    imgCont.setAttribute("src", startingImg);
-    startingImgs.forEach((img) => {
-      const photoCont = photos[startingImgs.indexOf(img)];
-      photoCont.setAttribute("src", img);
-      photoCont.classList.remove("active");
-    } )
-    photos[0].classList.add("active");
-}
+const resetPhotos = (end) => {
+  switch (end) {
+    case "start":
+      imgCont.setAttribute("src", startingImg);
+      startingImgs.forEach((img) => {
+        const photoCont = photos[startingImgs.indexOf(img)];
+        photoCont.setAttribute("src", img);
+        photoCont.classList.remove("active");
+      });
+      photos[0].classList.add("active");
+      break;
+    case "end":
+      imgCont.setAttribute("src", lastImg);
+      if (lastImgs.length < 5) {
+        photos.forEach((img) => img.setAttribute("src", ""));
+        lastImgs.forEach((img) => {
+          photos[lastImgs.indexOf(img)].setAttribute("src", img);
+        });
+        break;
+      }
+      lastImgs.forEach((img) => {
+        photos[lastImgs.indexOf(img)].setAttribute("src", img);
+      });
+      break;
+  }
+};
 
 const shiftPhotos = (dirEl) => {
-    const direction = dirEl.target.getAttribute('id').slice(4).toLowerCase();
-    const imgIndexArr = []
-    photos.forEach(photo =>
-        photo.getAttribute('src') !== '' ?
-            imgIndexArr.push(imgs.indexOf(photo.getAttribute('src'))) :
-            imgIndexArr.push(-1)
-    )
-    if(direction === 'right') {
-        if(imgIndexArr.filter(index => index === -1).length < 1){
-            const newIndexArr = imgIndexArr
-                .map(i => i + 5)
-            newIndexArr.forEach(i =>
-                i < imgs.length ?
-                    photos[newIndexArr.indexOf(i)].setAttribute('src', imgs[i]) :
-                    photos[newIndexArr.indexOf(i)].setAttribute('src', '')
-            )
-            return
-        }
-        resetPhotos()
+  const direction = dirEl.target.getAttribute("id").slice(4).toLowerCase();
+  const imgIndexArr = [];
+  photos.forEach((photo) =>
+    photo.getAttribute("src") !== ""
+      ? imgIndexArr.push(imgs.indexOf(photo.getAttribute("src")))
+      : imgIndexArr.push(-1)
+  );
+  if (direction === "right") {
+    if (imgIndexArr.filter((index) => index === -1).length < 1) {
+      const newIndexArr = imgIndexArr.map((i) => i + 5);
+      newIndexArr.forEach((i) =>
+        i < imgs.length
+          ? photos[newIndexArr.indexOf(i)].setAttribute("src", imgs[i])
+          : photos[newIndexArr.indexOf(i)].setAttribute("src", "")
+      );
+      return;
     }
+    resetPhotos("start");
+    return;
+  }
 
-}
+  if (imgIndexArr.filter((index) => index === -1).length > 0) {
+    const lastIndexSt = imgs.length - 1 - (imgs.length % 5) - 4;
+    const nxtSet = [lastIndexSt];
+    for (let i = 1; i < 5; i++) {
+      nxtSet.push(i + lastIndexSt);
+    }
+    nxtSet.forEach((index) => {
+      photos[nxtSet.indexOf(index)].setAttribute("src", imgs[index]);
+    });
+  }
+};
 
 const changePhoto = (dirEl) => {
-    const direction = dirEl.target.getAttribute('id').slice(4).toLowerCase()
-    const imgIndex = imgs.indexOf(imgCont.getAttribute('src'))
-    switch (direction) {
-        case 'right':
-            if(imgIndex === imgs.length - 1){
-              resetPhotos()
-              break;
-            }
-            imgCont.setAttribute('src', imgs[imgIndex + 1]);
-            photos[imgIndex % 5].classList.remove("active");
-            if(imgIndex % 5 < photos.length - 1){
-                photos[(imgIndex + 1) % 5].classList.add("active");
-                break;
-            }
-            shiftPhotos(dirEl);
-            photos[0].classList.add("active");
+  const direction = dirEl.target.getAttribute("id").slice(4).toLowerCase();
+  const imgIndex = imgs.indexOf(imgCont.getAttribute("src"));
+  switch (direction) {
+    case "right":
+      if (imgIndex === imgs.length - 1) {
+        resetPhotos("start");
         break;
-        case 'left':
-            if(imgIndex > 0){
-                imgCont.setAttribute('src', imgs[imgIndex - 1]);
-                photos[imgIndex].classList.remove("active");
-                photos[imgIndex - 1].classList.add("active");
-            }
+      }
+      imgCont.setAttribute("src", imgs[imgIndex + 1]);
+      photos[imgIndex % 5].classList.remove("active");
+      if (imgIndex % 5 < photos.length - 1) {
+        photos[(imgIndex + 1) % 5].classList.add("active");
         break;
-    }
-}
+      }
+      shiftPhotos(dirEl);
+      photos[0].classList.add("active");
+      break;
+    case "left":
+      if (imgIndex === 0) {
+        resetPhotos("end");
+        break;
+      }
+      imgCont.setAttribute("src", imgs[imgIndex - 1]);
+      photos[imgIndex % 5].classList.remove("active");
+      if (imgIndex % 5 > 0) {
+        photos[(imgIndex - 1) % 5].classList.add("active");
+        break;
+      }
+      shiftPhotos(dirEl);
+      photos[photos.length - 1].classList.add("active");
+      break;
+  }
+};
 
 const clickEvent = (dirEl) => {
-    dirEl.addEventListener("click", changePhoto)
-}
+  dirEl.addEventListener("click", changePhoto);
+};
 
-mainImgDir.forEach(clickEvent)
+mainImgDir.forEach(clickEvent);
 
 photos.forEach((photo) => {
   photo.addEventListener("click", () => {
@@ -162,10 +201,7 @@ window.onscroll = () => {
     navbar.classList.remove("sticky");
   }
 
-  if(contactUsSection.getBoundingClientRect().top < window.innerHeight -10 ){
+  if (contactUsSection.getBoundingClientRect().top < window.innerHeight - 10) {
     contactUsSection.classList.add("animate");
   }
-  
 };
-
-
