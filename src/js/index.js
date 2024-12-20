@@ -139,7 +139,20 @@ const shiftPhotos = (dirEl) => {
     nxtSet.forEach((index) => {
       photos[nxtSet.indexOf(index)].setAttribute("src", imgs[index]);
     });
+    return;
   }
+
+  const newIndex = imgs.indexOf(imgCont.getAttribute('src'))
+  const newArr = [newIndex]
+  for(let i = newIndex - 1; i > newIndex - 5; i--){
+    newArr.push(i)
+  }
+  const newSlides = newArr.reverse().map(i => imgs[i])
+  newSlides.forEach(img => {
+    photos[newSlides.indexOf(img)].setAttribute('src', img)
+  })
+  
+
 };
 
 const changePhoto = (dirEl) => {
