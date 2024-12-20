@@ -46,7 +46,7 @@
   position: fixed;
   z-index: -1;
   width: 100vw;
-  top: -200px;
+  top: 0px;
 }
 
 .hero-section {
@@ -57,13 +57,15 @@
     gap: 20px;
     color: #ececec; 
   animation: slideIn 1s ease-in-out;
+  text-align: center;
 }
 
 .hero h3 {
-  width: 35%;
+  width: 50%;
 }
 
-.about-us {
+.about-us,
+.ebybbq-in-action {
   background-color: var(--main-bg-color);
 }
 
@@ -80,6 +82,7 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  transition: all 0.3s ease-in-out;
 }
 
 .section-cont hr {
@@ -152,8 +155,8 @@
 }
 
 .contact-form textarea {
-  background-color: var(--secondary-bg-color);
-  color: var(--alt-text-color);
+  background-color: #ececec;
+  color: #1b1b1b;
   padding: 5px 10px;
   border: 1px solid var(--main-bg-color);
   border-radius: 5px;
@@ -180,8 +183,8 @@
 }
 
 .input-cont input {
-  background-color: var(--secondary-bg-color);
-  color: var(--alt-text-color);
+  background-color: #ececec;
+  color: #1b1b1b;
   padding: 5px 10px;
   border: 1px solid var(--main-bg-color);
   border-radius: 5px;
@@ -191,4 +194,55 @@
   border: 2px solid red;
 }
 
+.main-photo-cont {
+  min-width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.fa-caret-left,
+.fa-caret-right {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+#imgCont {
+  max-width: 500px;
+  max-height: 300px;
+  border-radius: 20px;
+  box-shadow: 0 0 50px 10px var(--alt-text-color);
+}
+
+.photo-reel-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--photo-reel-bg);
+  padding: 30px 20px;
+  box-shadow: 0 0 10px 10px var(--photo-reel-bg);
+}
+
+.photo-reel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  max-width: 75%;
+}
+
+.photo-reel .photo {
+  cursor: pointer;
+  width: 10%;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.photo-reel .photo.active {
+  box-shadow: 0 0 65px -20px var(--secondary-bg-color-opacity);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid gold;
+}
 
