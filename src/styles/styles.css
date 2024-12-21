@@ -128,7 +128,7 @@
   font-weight: 700;
 }
 
-.contact-us .section-cont.animate{
+.section-cont.animate{
   animation: slideIn 1s ease-in-out;
 }
 
@@ -216,6 +216,7 @@
 }
 
 .photo-reel-cont {
+  max-height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;

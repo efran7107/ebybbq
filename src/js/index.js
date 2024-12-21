@@ -55,7 +55,10 @@ const imgs = [
 ];
 
 const navbar = document.getElementById("nav");
+const aboutUsSection = document.getElementById('aboutUsSection')
 const contactUsSection = document.getElementById("contactUsSection");
+const ebybbqInAction = document.getElementById('ebybbqInAction');
+const sectionArr = [aboutUsSection, contactUsSection, ebybbqInAction]
 const imgCont = document.getElementById("imgCont");
 const mainImgDir = [
   document.getElementById("mainLeft"),
@@ -67,6 +70,7 @@ const startingImg = startingImgs[0];
 const lastImgs =
   imgs.length % 5 > 0 ? imgs.slice(-(imgs.length % 5)) : imgs.slice(-5);
 const lastImg = imgs[imgs.length - 1];
+
 
 imgCont.setAttribute("src", startingImg);
 startingImgs.forEach((img) => {
@@ -214,7 +218,12 @@ window.onscroll = () => {
     navbar.classList.remove("sticky");
   }
 
-  if (contactUsSection.getBoundingClientRect().top < window.innerHeight - 10) {
-    contactUsSection.classList.add("animate");
-  }
+  sectionArr.forEach((section) => {
+    if (section.getBoundingClientRect().top < window.innerHeight - 10) {
+      section.classList.add("animate");
+      return
+    }
+  })
+
+  
 };
