@@ -9,7 +9,7 @@
   color: var(--alt-text-color);
   padding: 5px 10px;
   border-radius: 20px 0 0 20px;
-  right: -155px;
+  right: -165px;
   top: 45vh;
   transition: all 0.3s ease-in-out;
 }

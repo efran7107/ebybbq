@@ -69,7 +69,8 @@
   background-color: var(--main-bg-color);
 }
 
-.contact-us {
+.contact-us,
+.follow-us {
   background-color: var(--alt-bg-color);
 }
 
@@ -247,3 +248,23 @@
   border: 1px solid gold;
 }
 
+.social-icons {
+  display: flex;
+  gap: 50px;
+}
+
+.icon-conts {
+    background-color: var(--main-headers-color);
+    color: var(--alt-bg-color);
+    border-radius: 50%;
+    width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.social-icons i {
+  font-size: 30px;
+}
