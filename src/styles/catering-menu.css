@@ -1,0 +1,42 @@
+.navbar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    padding: 10px;
+    height: 75px;
+    margin-bottom: 250px;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--secondary-bg-color);
+  }
+
+  .navbar.sticky {
+    background-color: var(--secondary-bg-color-opacity);
+    height: 50px;
+  }
+  
+  .navbar.sticky img {
+    width: 100px;
+    left: 47vw;
+  }
+  
+  .navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .navbar a {
+    color: var(--alt-text-color);
+  }
+  
+  .navbar.sticky a {
+    color: var(--alt-text-color);
+  }
+  
+  .navbar img {
+    position: absolute;
+    width: 150px;
+    left: 45vw;
+    border-radius: 20px;
+  }

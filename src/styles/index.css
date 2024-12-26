@@ -41,6 +41,15 @@
   font-size: 1rem;
 }
 
+.footer {
+  background-color: black;
+    color: white;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
   position: relative;
   box-sizing: border-box;
